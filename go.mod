@@ -1,8 +1,7 @@
-module github.com/RobelAbr/lenslocked
+module github.com/RobelAbr/rob-server
 
 go 1.19
 
 require (
-github.com/gorilla/mux v1.8.1
-
+	github.com/go-chi/chi/v5 v5.0.10 // indirect
 )

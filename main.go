@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/v5"
 	"net/http"
 )
 
@@ -26,7 +26,6 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 </ul>
 `)
 }
-
 func main() {
 	r := chi.NewRouter()
 	r.Get("/", homeHandler)
