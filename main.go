@@ -27,16 +27,6 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 `)
 }
 
-//func main() {
-//	r := mux.NewRouter()
-//	r.HandleFunc("/", homeHandler)
-//	r.HandleFunc("/contact", contactHandler)
-//	r.HandleFunc("/faq", faqHandler)
-//	r.NotFoundHandler = http.HandlerFunc(http.NotFound)
-//	fmt.Println("Starting the server on :3000...")
-//	http.ListenAndServe(":3000", r)
-//}
-
 func main() {
 	r := chi.NewRouter()
 	r.Get("/", homeHandler)
