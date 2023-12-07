@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
+	"github.com/go-chi/chi"
 	"net/http"
 )
 
@@ -27,12 +27,24 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 `)
 }
 
+//func main() {
+//	r := mux.NewRouter()
+//	r.HandleFunc("/", homeHandler)
+//	r.HandleFunc("/contact", contactHandler)
+//	r.HandleFunc("/faq", faqHandler)
+//	r.NotFoundHandler = http.HandlerFunc(http.NotFound)
+//	fmt.Println("Starting the server on :3000...")
+//	http.ListenAndServe(":3000", r)
+//}
+
 func main() {
-	r := mux.NewRouter()
-	r.HandleFunc("/", homeHandler)
-	r.HandleFunc("/contact", contactHandler)
-	r.HandleFunc("/faq", faqHandler)
-	r.NotFoundHandler = http.HandlerFunc(http.NotFound)
+	r := chi.NewRouter()
+	r.Get("/", homeHandler)
+	r.Get("/contact", contactHandler)
+	r.Get("/faq", faqHandler)
+	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
+		http.Error(w, "<h1>Page not found<h1>", http.StatusNotFound)
+	})
 	fmt.Println("Starting the server on :3000...")
 	http.ListenAndServe(":3000", r)
 }
