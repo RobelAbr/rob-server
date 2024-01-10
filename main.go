@@ -10,10 +10,9 @@ import (
 )
 
 // commit something
-func homeHandler(w http.ResponseWriter, r *http.Request) {
+func executeTemplate(w http.ResponseWriter, filepath string) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	tplPath := filepath.Join("templates", "home.gohtml")
-	tpl, err := template.ParseFiles(tplPath)
+	tpl, err := template.ParseFiles(filepath)
 	if err != nil {
 		log.Printf("parsing template: %v", err)
 		http.Error(w, "There was a error parsing the template.", http.StatusInternalServerError)
@@ -28,9 +27,15 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // commit something
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	tplPath := filepath.Join("templates", "home.gohtml")
+	executeTemplate(w, tplPath)
+}
+
+// commit something
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	fmt.Fprint(w, "<h1>Contact Page</h1><p>To get in touch, email me at <a href=\"mailto:rabraha@hotmail.io\">rabraha@hotmail.io</a>.")
+	tplPath := filepath.Join("templates", "contact.gohtml")
+	executeTemplate(w, tplPath)
 }
 
 // commit something
@@ -45,7 +50,7 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 `)
 }
 
-// all pages of the webserver that be called
+// starts server and all pages of the webserver that be called
 func main() {
 	r := chi.NewRouter()
 	r.Get("/", homeHandler)
