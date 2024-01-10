@@ -40,14 +40,7 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 
 // commit something
 func faqHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	fmt.Fprint(w, `<b><h1>FAQ Page</h1><p>Welcome for any Questions:<br /></b>
-<ul>
-	<li>Q: Is there a free version?<br />A: Yes! We offer a free trial for 30 days on any paid plans.</li><br />
-	<li>Q: What are your support hour?<br />A: We have support staff answering emails 24/7, though response time may be a bit slower on weekdays.</li><br />
-	<li>Q: How do i contact support?<br />A: Email us - <a href="mailto:"support@rabraha.io">support@rabraha.io</a></li><br />
-</ul>
-`)
+	executeTemplate(w, filepath.Join("templates", "faq.gohtml"))
 }
 
 // starts server and all pages of the webserver that be called
