@@ -14,7 +14,7 @@
         }
         header {
             background-color: #f8f8f8;
-            padding: 20px 0;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         header h1 {
@@ -37,10 +37,6 @@
             font-weight: bold;
             font-size: 16px;
         }
-        /*section {*/
-        /*    padding: 60px 0;*/
-        /*}*/
-
         section h2 {
             color: #333;
         }
@@ -53,8 +49,6 @@
             width: 100%;
         }
         body {
-            /*background-image: url("/rob-server/web/img/backgound.jpg");*/
-            /*background-size: cover;*/
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -154,21 +148,20 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            padding: 20px;
+            padding: 80px;
         }
         .image-container {
-            width: 48%;
+            width: 50%;
             margin-bottom: 20px;
             position: relative;
             overflow: hidden;
         }
-
         .image-container img {
-            width: 100%;
-            height: auto;
+            max-width: 85%;
+            max-height: 85%;
+            align-content: center;
             transition: transform 0.3s ease-in-out;
         }
-
         .image-container:hover img {
             transform: scale(1.1); /* Vergrößerungseffekt beim Überfahren mit der Maus */
         }
@@ -181,16 +174,36 @@
         <h1>Learn to Earn</h1>
     </div>
 
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Über Uns</a></li>
-                <li><a href="#services">Dienstleistungen</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Über Uns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Dienstleistungen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 
 <section id="home">
@@ -201,17 +214,17 @@
 </section>
 
 <section>
-    <div class="image-container">
-        <img src="tutorials.jpg" alt="Image 1">
+    <div class="image-container d-flex justify-content-center">
+        <img src="rob-server/web/img/tutorials.jpg" alt="Tutorials" class="Tutorials">
     </div>
-    <div class="image-container">
-        <img src="information.jpg" alt="Image 2">
+    <div class="image-container d-flex justify-content-center">
+        <img src="rob-server/web/img/information.jpg" alt="Information">
     </div>
-    <div class="image-container">
-        <img src="styles.jpg" alt="Image 3">
+    <div class="image-container d-flex justify-content-center">
+        <img src="rob-server/web/img/styles.jpg" alt="Styles">
     </div>
-    <div class="image-container">
-        <img src="download.jpg" alt="Image 4">
+    <div class="image-container d-flex justify-content-center">
+        <img src="rob-server/web/img/download.jpg" alt="Download">
     </div>
 </section>
 
@@ -247,12 +260,10 @@
 </section>
 
 <section id="contact">
-    <div class="container">
+    <div class="contact-box">
         <h2>Kontaktiere uns</h2>
         <p>Hier kannst du uns Kontaktinformationen und eine Nachricht hinterlassen.</p>
-    </div>
 
-    <div class="container">
         <form action="#" method="post" id="contactForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -269,8 +280,10 @@
 </section>
 
 <footer>
-    <div class="container">
-        <p>&copy; 2024 Learn to Earn. Alle Rechte vorbehalten.</p>
+    <div class="col-12">
+        <div class="row d-flex justify-content-center align-items-center">
+            &copy; 2024 Learn to Earn. Alle Rechte vorbehalten.
+        </div>
     </div>
 </footer>
 

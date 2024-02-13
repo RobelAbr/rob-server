@@ -60,6 +60,18 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 	executeTemplate(w, filepath.Join("templates", "faq.gohtml"))
 }
 
+// here we call the template career
+func loginHandler(w http.ResponseWriter, r *http.Request) {
+	tplPath := filepath.Join("templates", "login.gohtml")
+	executeTemplate(w, tplPath)
+}
+
+// here we call the template career
+func registerHandler(w http.ResponseWriter, r *http.Request) {
+	tplPath := filepath.Join("templates", "register.gohtml")
+	executeTemplate(w, tplPath)
+}
+
 // starts server and all pages of the webserver that be called
 func main() {
 	r := chi.NewRouter()
@@ -67,6 +79,8 @@ func main() {
 	r.Get("/contact", contactHandler)
 	r.Get("/career", CareerHandler)
 	r.Get("/faq", faqHandler)
+	r.Get("/login", loginHandler)
+	r.Get("/register", registerHandler)
 	r.Handle("/rob-server/web/img/{name}", http.StripPrefix("/rob-server/web/img/", http.FileServer(http.Dir("./web/img/"))))
 	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Ohhh sorry....Page not found", http.StatusNotFound)
