@@ -24,12 +24,12 @@
         }
         nav ul {
             list-style: none;
-            margin: 0;
-            padding: 0;
+            margin: 0px;
+            padding: 0px;
         }
         nav ul li {
             display: inline-block;
-            margin-right: 20px;
+            margin-left: 80px;
         }
         nav ul li a {
             text-decoration: none;
@@ -94,8 +94,16 @@
             margin-bottom: 20px;
             padding: 20px;
         }
-        .container {
-            width: 50%;
+        .content-welcome {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .content-about {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .content-offer {
+            width: 90%;
             margin: 0 auto;
         }
         h2 {
@@ -165,6 +173,29 @@
         .image-container:hover img {
             transform: scale(1.1); /* Vergrößerungseffekt beim Überfahren mit der Maus */
         }
+        #back-to-top {
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 123, 255, 0.23); /* Hintergrundfarbe des Buttons */
+            color: #fff; /* Farbe des Pfeils */
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #back-to-top:hover {
+            background-color: rgba(0, 86, 179, 0.15); /* Hintergrundfarbe im Hover-Zustand */
+            color: #fff; /* Farbe im Hover-Zustand */
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -182,9 +213,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
+{{/*                    <li class="nav-item">*/}}
+{{/*                        <a class="nav-link active" aria-current="page" href="#">Home</a>*/}}
+{{/*                    </li>*/}}
                     <li class="nav-item">
                         <a class="nav-link" href="#about">Über Uns</a>
                     </li>
@@ -192,7 +223,7 @@
                         <a class="nav-link" href="#services">Dienstleistungen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Kontakt</a>
+                        <a class="nav-link" href="#feedback">Kontakt</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
@@ -207,9 +238,11 @@
 </header>
 
 <section id="home">
-    <div class="container">
+    <div class="content-welcome">
         <h2>Willkommen auf unserer Webseite</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet..</p>
+        <p>
+            Unsere Lernplattform wurde geschaffen, um Ihre Bildungsreise zu unterstützen und Ihnen die Freiheit zu geben, in Ihrem eigenen Tempo zu lernen. Tauchen Sie ein in eine Welt des Wissens, in der flexible Lernzeiten, umfassende Materialien und individualisierte Lernpfade eine einzigartige Lernerfahrung ermöglichen.
+        </p>
     </div>
 </section>
 
@@ -229,55 +262,97 @@
 </section>
 
 <section id="about">
-    <div class="container">
+    <div class="content-about">
         <h2>Über Uns</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet..</p>
+        <p>
+        <p><b>1. Flexible Lernzeiten:</b> Eine Lernplattform ermöglicht es den Nutzern, ihren eigenen Zeitplan zu gestalten. Egal, ob Sie ein Berufstätiger sind, der nebenbei studiert, oder ein Student mit unterschiedlichen Verpflichtungen – die flexiblen Lernzeiten passen sich Ihren Bedürfnissen an. Dies fördert eine individuelle Lernweise, die effizienter ist.<br>
+        </p>
+        <p><b>2. Umfangreiche Lernmaterialien:</b> Durch hochwertige Inhalte, interaktive Übungen, Videos und virtuelle Simulationen bieten Lernplattformen eine vielfältige Palette von Lernmaterialien. Dies erleichtert das Verständnis komplexer Themen und fördert einen praxisnahen Ansatz.<br>
+        </p>
+        <p><b>3. Individualisierte Lernpfade:</b> Jeder Lernende ist einzigartig, und Lernplattformen erkennen dies an. Durch die Möglichkeit, personalisierte Lernpfade zu erstellen, können Nutzer den Stoff in ihrem eigenen Tempo durchgehen und sich auf ihre individuellen Schwächen konzentrieren.<br>
+        </p>
+        <p><b>4. Globale Vernetzung:</b> Eine Lernplattform verbindet Lernende aus der ganzen Welt. Dies schafft eine globale Gemeinschaft, in der Wissen und Erfahrungen ausgetauscht werden können. Die Zusammenarbeit in virtuellen Klassenzimmern fördert nicht nur das Verständnis von verschiedenen Perspektiven, sondern auch interkulturelle Kompetenzen.<br>
+        </p>
+        <p><b>5. Echtzeit-Feedback:</b> Sofortiges Feedback ist entscheidend für den Lernerfolg. Lernplattformen bieten die Möglichkeit, sofortige Rückmeldungen zu erhalten, sei es durch automatisierte Tests oder durch interaktive Lernmodule. Dies ermöglicht es den Lernenden, ihre Fortschritte zu überwachen und gezielt an ihren Schwächen zu arbeiten.<br>
+        </p>
+        <p><b>6. Zugänglichkeit für alle:</b> Eine Lernplattform bringt Bildung zu Menschen, die möglicherweise geografisch oder finanziell eingeschränkt sind. Durch den Zugang zu qualitativ hochwertigen Bildungsinhalten wird Wissen für jeden zugänglich, unabhängig von Standort oder finanziellen Ressourcen.
+        </p>
     </div>
 </section>
 
 <section id="services">
-<div class="container">
+<div class="content-offer">
     <h2>Unsere Dienstleistungen</h2>
     <ul class="services-list">
         <li>
             <h3>Tutorials</h3>
-            <p>Form von Videos oder schriftlichen Anweisungen, um den Lernprozess zu unterstützen.</p>
+            <p>In Form von Videos, PDFs oder Links, um den Lernprozess zu unterstützen.</p>
         </li>
         <li>
             <h3>Entwicklung</h3>
-            <p>Die Selbstentwicklung ermöglicht es Individuen, ihre Stärken und Schwächen zu erkennen.</p>
+            <p>Die Selbstentwicklung ermöglicht, ihre Stärken und Schwächen zu erkennen.</p>
         </li>
         <li>
             <h3>Lernmethoden</h3>
-            <p>Ansätze und Techniken, die dazu verwendet werden, Wissen und Fähigkeiten zu erwerben.</p>
+            <p>Techniken, die dazu verwendet werden, Wissen und Fähigkeiten zu erwerben.</p>
         </li>
         <li>
             <h3>Lernmaterial</h3>
-            <p> Videos, Präsentationen. Informationen auf verschiedene Weisen zugänglich zu machen.</p>
+            <p>Lerninhalt, Videos & PDFs für alle auf verschiedene Weisen zugänglich zu machen.</p>
         </li>
     </ul>
 </div>
 </section>
 
-<section id="contact">
-    <div class="contact-box">
-        <h2>Kontaktiere uns</h2>
-        <p>Hier kannst du uns Kontaktinformationen und eine Nachricht hinterlassen.</p>
 
-        <form action="#" method="post" id="contactForm">
+<section id="feedback">
+    <div class="contact-box">
+        <h2>Feedback und Fragen</h2>
+        <p>Haben Sie Fragen oder möchten Sie uns Feedback geben? Nutzen Sie das unten stehende Formular, um mit uns in Kontakt zu treten.</p>
+
+        <form action="#" method="post" id="feedbackForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
             <label for="email">E-Mail:</label>
             <input type="email" id="email" name="email" required>
 
+            <label for="subject">Betreff:</label>
+            <input type="text" id="subject" name="subject" required>
+
             <label for="message">Nachricht:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Senden</button>
+            <button type="submit">Absenden</button>
         </form>
     </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<a id="back-to-top" href="#" class="back-to-top">
+    <i class="bi bi-arrow-up"></i>
+    <span>Up</span>
+</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
 
 <footer>
     <div class="col-12">
