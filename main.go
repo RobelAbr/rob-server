@@ -50,7 +50,7 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // here we call the template career
-func CareerHandler(w http.ResponseWriter, r *http.Request) {
+func careerHandler(w http.ResponseWriter, r *http.Request) {
 	tplPath := filepath.Join("templates", "career.gohtml")
 	executeTemplate(w, tplPath)
 }
@@ -60,15 +60,39 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 	executeTemplate(w, filepath.Join("templates", "faq.gohtml"))
 }
 
-// here we call the template career
+// here we call the template login
 func loginHandler(w http.ResponseWriter, r *http.Request) {
 	tplPath := filepath.Join("templates", "login.gohtml")
 	executeTemplate(w, tplPath)
 }
 
-// here we call the template career
+// here we call the template register
 func registerHandler(w http.ResponseWriter, r *http.Request) {
 	tplPath := filepath.Join("templates", "register.gohtml")
+	executeTemplate(w, tplPath)
+}
+
+// here we call the template tutorials
+func tutorialsHandler(w http.ResponseWriter, r *http.Request) {
+	tplPath := filepath.Join("templates", "tutorials.gohtml")
+	executeTemplate(w, tplPath)
+}
+
+// here we call the template tutorials
+func developHandler(w http.ResponseWriter, r *http.Request) {
+	tplPath := filepath.Join("templates", "develop.gohtml")
+	executeTemplate(w, tplPath)
+}
+
+// here we call the template tutorials
+func learnHandler(w http.ResponseWriter, r *http.Request) {
+	tplPath := filepath.Join("templates", "learn.gohtml")
+	executeTemplate(w, tplPath)
+}
+
+// here we call the template tutorials
+func materialHandler(w http.ResponseWriter, r *http.Request) {
+	tplPath := filepath.Join("templates", "material.gohtml")
 	executeTemplate(w, tplPath)
 }
 
@@ -77,10 +101,14 @@ func main() {
 	r := chi.NewRouter()
 	r.Get("/", homeHandler)
 	r.Get("/contact", contactHandler)
-	r.Get("/career", CareerHandler)
+	r.Get("/career", careerHandler)
 	r.Get("/faq", faqHandler)
 	r.Get("/login", loginHandler)
 	r.Get("/register", registerHandler)
+	r.Get("/tutorials", tutorialsHandler)
+	r.Get("/develop", developHandler)
+	r.Get("/learn", learnHandler)
+	r.Get("/material", materialHandler)
 	r.Handle("/rob-server/web/img/{name}", http.StripPrefix("/rob-server/web/img/", http.FileServer(http.Dir("./web/img/"))))
 	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Ohhh sorry....Page not found", http.StatusNotFound)

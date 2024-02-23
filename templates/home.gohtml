@@ -40,14 +40,6 @@
         section h2 {
             color: #333;
         }
-        footer {
-            background-color: #f8f8f8;
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -94,25 +86,26 @@
             margin-bottom: 20px;
             padding: 20px;
         }
+        .services-list li:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         .content-welcome {
-            width: 80%;
+            width: 70%;
             margin: 0 auto;
         }
         .content-about {
-            width: 80%;
+            width: 70%;
             margin: 0 auto;
         }
         .content-offer {
-            width: 90%;
+            width: 950px;
             margin: 0 auto;
         }
         h2 {
             color: #333;
         }
-        .services-list li:hover {
-            background-color: #f0f0f0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+
         h3 {
             color: #333;
         }
@@ -165,8 +158,8 @@
             overflow: hidden;
         }
         .image-container img {
-            max-width: 85%;
-            max-height: 85%;
+            max-width: 80%;
+            max-height: 80%;
             align-content: center;
             transition: transform 0.3s ease-in-out;
         }
@@ -190,11 +183,18 @@
             text-decoration: none;
             transition: background-color 0.3s, color 0.3s;
         }
-
         #back-to-top:hover {
             background-color: rgba(0, 86, 179, 0.15); /* Hintergrundfarbe im Hover-Zustand */
             color: #fff; /* Farbe im Hover-Zustand */
             cursor: pointer;
+        }
+        footer {
+            background-color: #f8f8f8;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -264,7 +264,7 @@
 <section id="about">
     <div class="content-about">
         <h2>Über Uns</h2>
-        <p>
+{{/*        <p>*/}}
         <p><b>1. Flexible Lernzeiten:</b> Eine Lernplattform ermöglicht es den Nutzern, ihren eigenen Zeitplan zu gestalten. Egal, ob Sie ein Berufstätiger sind, der nebenbei studiert, oder ein Student mit unterschiedlichen Verpflichtungen – die flexiblen Lernzeiten passen sich Ihren Bedürfnissen an. Dies fördert eine individuelle Lernweise, die effizienter ist.<br>
         </p>
         <p><b>2. Umfangreiche Lernmaterialien:</b> Durch hochwertige Inhalte, interaktive Übungen, Videos und virtuelle Simulationen bieten Lernplattformen eine vielfältige Palette von Lernmaterialien. Dies erleichtert das Verständnis komplexer Themen und fördert einen praxisnahen Ansatz.<br>
@@ -284,22 +284,30 @@
 <div class="content-offer">
     <h2>Unsere Dienstleistungen</h2>
     <ul class="services-list">
-        <li>
-            <h3>Tutorials</h3>
-            <p>In Form von Videos, PDFs oder Links, um den Lernprozess zu unterstützen.</p>
-        </li>
-        <li>
-            <h3>Entwicklung</h3>
-            <p>Die Selbstentwicklung ermöglicht, ihre Stärken und Schwächen zu erkennen.</p>
-        </li>
-        <li>
-            <h3>Lernmethoden</h3>
-            <p>Techniken, die dazu verwendet werden, Wissen und Fähigkeiten zu erwerben.</p>
-        </li>
-        <li>
-            <h3>Lernmaterial</h3>
-            <p>Lerninhalt, Videos & PDFs für alle auf verschiedene Weisen zugänglich zu machen.</p>
-        </li>
+        <a href="/tutorials">
+            <li >
+                <h3>Tutorials</h3>
+                <p>In Form von Videos, PDFs oder Links, um den Lernprozess zu unterstützen.</p>
+            </li>
+        </a>
+        <a href="/develop">
+            <li>
+                <h3>Entwicklung</h3>
+                <p>Die Selbstentwicklung ermöglicht, ihre Stärken und Schwächen zu erkennen.</p>
+            </li>
+        </a>
+        <a href="/learn">
+            <li>
+                <h3>Lernmethoden</h3>
+                <p>Techniken, die dazu verwendet werden, Wissen und Fähigkeiten zu erwerben.</p>
+            </li>
+        </a>
+        <a href="/material">
+            <li>
+                <h3>Lernmaterial</h3>
+                <p>Lerninhalt, Videos & PDFs für alle auf verschiedene Weisen zugänglich zu machen.</p>
+            </li>
+        </a>
     </ul>
 </div>
 </section>
@@ -332,7 +340,7 @@
 
 <a id="back-to-top" href="#" class="back-to-top">
     <i class="bi bi-arrow-up"></i>
-    <span>Up</span>
+    <span>🡱</span>
 </a>
 
 <script>
