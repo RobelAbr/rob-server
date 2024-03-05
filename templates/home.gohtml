@@ -75,20 +75,6 @@
         button:hover {
             background-color: #008CBA;
         }
-        .services-list {
-            list-style: none;
-            padding: 0;
-        }
-        .services-list li {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-        .services-list li:hover {
-            background-color: #f0f0f0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
         .content-welcome {
             width: 70%;
             margin: 0 auto;
@@ -98,35 +84,45 @@
             margin: 0 auto;
         }
         .content-offer {
-            width: 950px;
+            width: 60%;
             margin: 0 auto;
         }
         h2 {
             color: #333;
         }
-
         h3 {
             color: #333;
         }
         p {
             color: #666;
         }
-        /* Responsive Design */
-        @media (min-width: 576px) {
-            .container {
-                width: 80%;
-            }
-            .services-list li {
-                width: 48%;
-                float: left;
-                margin-right: 2%;
-            }
+        .services-list {
+            list-style: none;
+            padding: 0;
+            width: 100%;
         }
-        @media (min-width: 768px) {
+
+        .services-list a {
+            text-decoration: none; /* Unterstreichungen für Links entfernen */
+            color: #333; /* Textfarbe für Links festlegen */
+        }
+
+        .services-list li {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 100%; /* Volle Breite verwenden */
+        }
+
+        .services-list li:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 576px) {
             .services-list li {
-                width: 48%;
-                float: left;
-                margin-right: 2%;
+                width: 100%; /* Auf kleinen Bildschirmen die volle Breite verwenden */
+                float: none; /* Float aufheben, um die Elemente untereinander zu platzieren */
             }
         }
         @media (min-width: 992px) {
@@ -212,9 +208,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-{{/*                    <li class="nav-item">*/}}
-{{/*                        <a class="nav-link active" aria-current="page" href="#">Home</a>*/}}
-{{/*                    </li>*/}}
                     <li class="nav-item">
                         <a class="nav-link" href="#about">Über Uns</a>
                     </li>
@@ -286,7 +279,7 @@
         <a href="/tutorials">
             <li >
                 <h3>Tutorials</h3>
-                <p>Videos, für schrittweises lernen, um den eigenen Lernprozess zu unterstützen.</p>
+                <p>Für schrittweises lernen, um den eigenen Lernprozess zu unterstützen.</p>
             </li>
         </a>
         <a href="/develop">
@@ -310,7 +303,6 @@
     </ul>
 </div>
 </section>
-
 
 <section id="feedback">
     <div class="contact-box">

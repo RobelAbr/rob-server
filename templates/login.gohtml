@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +24,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 400px;
             text-align: center;
         }
 
@@ -32,6 +33,25 @@
             padding: 10px;
             margin-bottom: 15px;
             box-sizing: border-box;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        #password {
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
         }
 
         button {
@@ -62,7 +82,6 @@
             width: 100%;
         }
     </style>
-
 </head>
 <body>
 
@@ -70,7 +89,10 @@
     <h2>Login</h2>
     <form id="loginForm">
         <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Passwort" required>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Passwort" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+        </div>
         <button type="submit">Anmelden</button>
     </form>
     <a href="/" id="forgotPassword">Passwort vergessen?</a>
@@ -78,6 +100,19 @@
 </div>
 
 <script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var toggleIcon = document.querySelector(".toggle-password");
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            toggleIcon.textContent = "👁️";
+        } else {
+            passwordInput.type = "password";
+            toggleIcon.textContent = "👁️";
+        }
+    }
+
     document.getElementById("loginForm").addEventListener("submit", function (event) {
         event.preventDefault();
         // Hier kannst du die Anmelde-Logik implementieren
