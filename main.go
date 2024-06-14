@@ -99,6 +99,7 @@ func materialHandler(w http.ResponseWriter, r *http.Request) {
 // main startet den Server und ruft alle Seiten des Webservers auf, die aufgerufen werden können
 func main() {
 	r := chi.NewRouter()
+
 	r.Get("/", homeHandler)
 	r.Get("/contact", contactHandler)
 	r.Get("/career", careerHandler)
