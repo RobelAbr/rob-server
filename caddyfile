@@ -1,0 +1,5 @@
+example.com {
+    root * http://localhost:3000/
+    file_server
+}
+
